@@ -20,10 +20,12 @@ def part_one(data, one, two):
     return data[0]
 
 
+def part_two(input_num, data):
+    for noun in range(100):
+        for verb in range(100):
+            if part_one(data.copy(), noun, verb) == input_num:
+                return 100 * noun + verb
+
+
 print(part_one(data, 12, 2))
-
-
-
-
-
-
+print(part_two(19690720, data))
