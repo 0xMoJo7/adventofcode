@@ -10,15 +10,11 @@ def part_one(data, one, two):
     data[2] = two
     y = 0
     while y < len(data):
-        opcode = data[y]
-        input1 = data[data[y + 1]]
-        input2 = data[data[y + 2]]
-        dest = data[y + 3]
-        if opcode == 1:
-            data[dest] = input1 + input2
-        elif opcode == 2:
-            data[dest] = input1 * input2
-        elif opcode == 99:
+        if data[y] == 1:
+            data[data[y + 3]] = data[data[y + 1]] + data[data[y + 2]]
+        elif data[y] == 2:
+            data[data[y + 3]] = data[data[y + 1]] * data[data[y + 2]]
+        elif data[y] == 99:
             break
         y += 4
     return data[0]

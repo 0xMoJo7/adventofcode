@@ -22,3 +22,7 @@ def part_two():
             fuel_req = calc_fuel(fuel_req)
             fuel_needed += fuel_req
     return fuel_needed
+
+
+print(part_one())
+print(part_two())
